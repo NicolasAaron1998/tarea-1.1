@@ -1,0 +1,231 @@
+//Created by Nicolas on 2026-06-15
+<!--prepara una pagina HTML5 para una pequeña presentacion mia que pueda contener mi nombre y una pequeña presentacion personal-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de presentación personal de Nicolas">
+  <title>Presentación de Nicolas</title>
+  <style>
+    :root {
+      --color-fondo: #f3f7f5;
+      --color-superficie: #ffffff;
+      --color-principal: #176b63;
+      --color-secundario: #dceee9;
+      --color-texto: #1f302d;
+      --color-suave: #61716d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    .contenedor {
+      margin: 0 auto;
+      max-width: 960px;
+      padding: 2rem 1.25rem;
+    }
+
+    header {
+      align-items: center;
+      background: var(--color-principal);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+    .presentacion {
+      align-items: center;
+      background: var(--color-superficie);
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 180px;
+      margin-top: 2rem;
+      padding: 3rem;
+    }
+
+    .etiqueta {
+      color: var(--color-principal);
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .descripcion {
+      color: var(--color-suave);
+      font-size: 1.15rem;
+      max-width: 580px;
+    }
+
+    .avatar {
+      align-items: center;
+      background: var(--color-secundario);
+      border: 8px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--color-secundario);
+      color: var(--color-principal);
+      display: flex;
+      font-size: 3rem;
+      font-weight: bold;
+      height: 160px;
+      justify-content: center;
+      justify-self: center;
+      width: 160px;
+    }
+
+    .seccion {
+      padding: 3rem 0 1rem;
+    }
+
+    h2 {
+      color: var(--color-principal);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .datos {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dato {
+      background: var(--color-superficie);
+      border-top: 4px solid var(--color-principal);
+      padding: 1.25rem;
+    }
+
+    .dato strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .dato span {
+      color: var(--color-suave);
+    }
+
+    footer {
+      color: var(--color-suave);
+      font-size: 0.9rem;
+      padding: 3rem 0 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+
+      .presentacion {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+
+      .avatar {
+        grid-row: 1;
+      }
+
+      .datos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Mi presentación</div>
+    <nav aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#datos">Datos</a>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <section class="presentacion" aria-labelledby="titulo">
+      <div>
+        <p class="etiqueta">Hola, soy</p>
+        <h1 id="titulo">Nicolas</h1>
+        <p class="descripcion">
+          Soy estudiante de Grado Superior y me interesa aprender, crear proyectos
+          y seguir desarrollando mis habilidades en el mundo de la tecnología.
+        </p>
+      </div>
+      <div class="avatar" aria-label="Inicial de Nicolas">N</div>
+    </section>
+
+    <section class="seccion" id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <h2 id="sobre-mi-titulo">Un poco sobre mí</h2>
+      <p>
+        Me considero una persona responsable, curiosa y con ganas de mejorar.
+        En mi tiempo libre disfruto aprendiendo cosas nuevas, escuchando música
+        y compartiendo tiempo con mis amigos.
+      </p>
+    </section>
+
+    <section class="seccion" id="datos" aria-labelledby="datos-titulo">
+      <h2 id="datos-titulo">Mis datos</h2>
+      <div class="datos">
+        <article class="dato">
+          <strong>Estudios</strong>
+          <span>Grado Superior</span>
+        </article>
+        <article class="dato">
+          <strong>Intereses</strong>
+          <span>Tecnología y diseño web</span>
+        </article>
+        <article class="dato">
+          <strong>Objetivo</strong>
+          <span>Seguir aprendiendo cada día</span>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Nicolas</p>
+    </footer>
+  </main>
+</body>
+</html>
