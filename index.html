@@ -5,36 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación personal</title>
     <style>
+        :root {
+            --azul: #2563eb;
+            --violeta: #7c3aed;
+            --rosa: #ec4899;
+            --blanco: #ffffff;
+            --gris: #1f2937;
+            --negro: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
             font-family: Arial, sans-serif;
-            color: #1f2937;
+            color: var(--gris);
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent 25%),
+                        radial-gradient(circle at bottom right, rgba(255,255,255,0.15), transparent 30%),
+                        linear-gradient(135deg, var(--negro), #1d4ed8, #7c3aed, #ec4899);
+            background-size: 200% 200%;
+            animation: fondo 14s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes fondo {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.45;
+            z-index: 0;
+            animation: float 12s ease-in-out infinite alternate;
+        }
+
+        body::before {
+            background: rgba(59, 130, 246, 0.7);
+            top: 8%;
+            left: 10%;
+        }
+
+        body::after {
+            background: rgba(236, 72, 153, 0.7);
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0) scale(1); }
+            to { transform: translateY(-30px) scale(1.1); }
         }
 
         .card {
-            width: min(90%, 700px);
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 18px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-            padding: 30px 35px;
+            width: min(90%, 760px);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 28px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+            padding: 35px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            pointer-events: none;
         }
 
         h1 {
             margin-top: 0;
-            color: #4f46e5;
-            font-size: 2rem;
+            color: #f8fafc;
+            font-size: 2.4rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
         }
 
         p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin: 12px 0;
+            font-size: 1.18rem;
+            line-height: 1.9;
+            margin: 14px 0;
+            position: relative;
+            z-index: 1;
+            color: #f8fafc;
+        }
+
+        p:first-of-type {
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.08));
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 16px;
+            padding: 20px 22px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        p:last-of-type {
+            color: #e2e8f0;
+            font-style: italic;
         }
     </style>
 </head>
@@ -43,6 +134,7 @@
         <h1>Presentación personal</h1>
         <p>Me llamo Nicolás, vivo en mi casa, y esta es mi primera tarea de Desarrollo de Aplicaciones Web.</p>
         <p>He estudiado antes en CFG de Sistemas microinformaticos y redes.</p>
+        <p>De la asignatura espero aprender cosas de lenguaje de marcas como HTML y CSS.</p>
     </div>
 </body>
 </html>
