@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Presentación personal</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+            font-family: Arial, sans-serif;
+            color: #1f2937;
+        }
+
+        .card {
+            width: min(90%, 700px);
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            padding: 30px 35px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #4f46e5;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+    </style>
 </head>
 <body>
-    <p>Me llamo Nicolás, vivo en las Bayas, y este es mi primer año cursando Desarrollo de Aplicaciones Web.</p>
-    <p>He estudiado antes en CFG de Sistemas microinformaticos y redes.</p>
+    <div class="card">
+        <h1>Presentación personal</h1>
+        <p>Me llamo Nicolás, vivo en mi casa, y esta es mi primera tarea de Desarrollo de Aplicaciones Web.</p>
+        <p>He estudiado antes en CFG de Sistemas microinformaticos y redes.</p>
+    </div>
 </body>
 </html>
